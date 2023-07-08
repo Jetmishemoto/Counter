@@ -13,24 +13,43 @@ def main_page():
     else:
        session['num_visits'] += 1
        print("A Visiter is in the session")
+       print( session['num_visits'])
 
     return render_template("index.html" ,num_visits = session['num_visits'] )
+
+@app.route('/reset',methods=['POST'] )         
+def reset():
+       
+    session['num_visits'] = 0
+
+    return redirect('/')
+
 
 @app.route('/clear',methods=['POST'] )         
 def clear_session():
        
     session['clear'] = session.clear()
 
-    return render_template("index.html")
+    return redirect('/')
+
+
+
+@app.route('/add2',methods=['POST'] )         
+def add2_session():
+    
+    if not 'num_visits' in session:
+        session['num_visits'] = 0
+
+    else:   
+     session['num_visits'] += 2
+
+    return redirect('/')
 
 
 
 @app.route('/users', methods=['POST'])
 def create_user():
-    # session['num_visits'] += 1
-       
-
-
+  
     return redirect('/')
 
 
