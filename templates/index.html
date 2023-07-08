@@ -19,42 +19,41 @@
            justify-content: center;
         }
 
-        .wrapper{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-
-        }
-        .box{
-            display: flex;
-            background-color: aqua;
-            border:black 5px;
-            width:317px;
-            height: 317px; 
-             
-        }
+        
         
     </style>
 
 
-    <H1> Counter</H1>
-
-    <p>1</p>
-
-  
-
-    <div class="wrapper">
-        <div class= box > </div>
-        <div class= box > </div>
-        <div class= box > </div>
-    </div>
 
 
+<!-- <form action='/users' method='post'>
+    <label for='name'>Name:</label>
+    <input type='text' name='name'>
+    <label for='email'>Email:</label>
+    <input type='text' name='email'>
+    <button> </button>
+</form> -->
+<H1> Counter</H1>
 
+<!-- 
+    <form action='/users' method='post'>
+        <label for='name'>Name:</label>
+        <input type='text' name='name'>
+        <label for='email'>Email:</label>
+        <input type='text' name='email'>
+        <input type='submit' value='create user'>
+    </form> -->
 
-
-
+    <form action="/users" method="post">
+        {{num_visits}}
+        <button type="submit" >Count</button>
+    </form>
+    
+    <form action="/clear" method="post">
+        
+        <button type="submit" >clear</button>
+    </form>
+    
     
 </body>
 </html>
