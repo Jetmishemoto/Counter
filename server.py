@@ -8,12 +8,12 @@ app.secret_key = 'Password1'
 def main_page():
     
     if not 'num_visits' in session:
-        session['num_visits'] = 1
+        session['num_visits'] = 0
         
     else:
        session['num_visits'] += 1
        print("A Visiter is in the session")
-       print( session['num_visits'])
+       print( "Num of Visiters : " + str(session['num_visits']))
 
     return render_template("index.html" ,num_visits = session['num_visits'] )
 
@@ -37,11 +37,7 @@ def clear_session():
 @app.route('/add2',methods=['POST'] )         
 def add2_session():
     
-    if not 'num_visits' in session:
-        session['num_visits'] = 0
-
-    else:   
-     session['num_visits'] += 2
+    session['num_visits'] += 1
 
     return redirect('/')
 

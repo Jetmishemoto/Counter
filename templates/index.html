@@ -14,45 +14,90 @@
             background-color: rgb(202, 202, 202);
         }
 
+    .title{
+      display: flex;
+      color: aliceblue;
+      justify-content: center;
+      background-color: rgb(0 70 125);
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      width: 25%;
+      border-radius: 20px;
+      padding: 10px;
+      align-items: center;
+      margin: 30px auto;
+
+    }
+
+        .container{
+        background-color: rgb(0 70 125);
+        color: aliceblue;
+        box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2) !important;
+        border-radius: 30px;
+        width: 35%;
+        }
+
         h1{
             display: flex;
            align-items: center;
            justify-content: center;
         }
+        .num{
+            display: flex;
+           align-items: center;
+           justify-content: center;
+           margin: 10px;
+        }
+        .btns{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+            
+
+        
 
         
         
     </style>
 
 
-<H1> Counter</H1>
+    <H1 class="title"> Counter</H1>
+    <div class="container shadow-lg p-3 mb-5 rounded border border-success" >
 
-<div>{{num_visits}}</div>
-
-    <div class="form">
-
-        <form action="/users" method="post">
-            
-            <button type="submit" >Count</button>
-        </form>
-    
-        <form action="/reset" method="post">
-            
-            <button type="submit" >reset</button>
-        </form>
+    <div> 
+        <h3 class="num">{{num_visits}} </h3>
+    </div>
+        
+    <div class= "btns">
+        
+            <form  action="/users" method="post">
+                <button class="btn btn-primary" type="submit" >Count</button>
+            </form>
+     
+       
+            <form action="/reset" method="post">
+                
+                <button class="btn btn-secondary" type="submit" >reset</button>
+            </form>
     
         
-        <form action="/clear" method="post">
             
-            <button type="submit" >clear</button>
-        </form>
-    
-        <form action="/add2" method="post">
             
-            <button type="submit" >add 2</button>
-        </form>
+            
+                
+                <form action="/clear" method="post">
+                    
+                    <button  class="btn btn-danger" type="submit" >clear</button>
+                </form>
+            
+                <form action="/add2" method="post">
+                    
+                    <button class="btn btn-primary" type="submit" >add 2</button>
+                </form>
 
-    </div>
+            </div>
+    
+
     
     
 </body>
